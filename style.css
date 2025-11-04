@@ -1,0 +1,38 @@
+/* Custom styles to ensure full height and smooth transitions, required for sidebar behavior */
+:root {
+    --sidebar-width: 64px;
+}
+.sidebar {
+    width: var(--sidebar-width);
+    transition: width 0.3s;
+}
+.main-content {
+    transition: margin-left 0.3s;
+    margin-left: var(--sidebar-width);
+}
+/* Make sidebar expand on desktop hover */
+@media (min-width: 640px) {
+    .sidebar:hover {
+        width: 256px; /* sm:w-64 equivalent */
+        z-index: 10;
+    }
+    .sidebar:hover ~ .main-content {
+        margin-left: 256px;
+    }
+}
+/* Scrollbar styling for the alert box */
+#alert-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+/* --- Style for Login Background Video --- */
+#bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This makes the video cover the screen without stretching */
+    z-index: 0; /* Places the video behind the login form */
+}
