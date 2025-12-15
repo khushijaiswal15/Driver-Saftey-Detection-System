@@ -1,0 +1,13 @@
+train: train/images
+val: valid/images
+test: test/images
+
+nc: 11
+names: ['Attentive eye', 'Drowsy eye', 'Eyeclosed', 'Fist Gesture', 'Neutral', 'Palm Gesture', 'V Gesture', 'Yawn', 'close', 'noYawn', 'open']
+
+roboflow:
+  workspace: khushi-jltyz
+  project: eyes-close-open-yawn-no-yawn-8o5gg
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/khushi-jltyz/eyes-close-open-yawn-no-yawn-8o5gg/dataset/1

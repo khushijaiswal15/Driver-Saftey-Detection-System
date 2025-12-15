@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Safety Detection System</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #c7c7c7;
+            border-radius: 10px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #a0a0a0;
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fade-in 0.3s ease-out forwards;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 flex h-screen overflow-hidden font-sans">
+
+
+    <div id="sidebar"
+        class="sidebar bg-gray-900 text-white flex flex-col flex-shrink-0 fixed h-full z-20 shadow-xl w-20 lg:w-64 transition-all duration-300 hidden">
+        <div class="p-4 sm:p-6 flex items-center h-16 justify-center lg:justify-start border-b border-gray-800">
+            <i data-lucide="zap" class="w-8 h-8 text-indigo-500"></i>
+            <span class="hidden lg:inline text-xl font-bold ml-3 tracking-wide text-gray-100">DSD System</span>
+        </div>
+
+        <div class="p-4">
+            <button id="start-trip-btn" onclick="handleStartTrip()"
+                class="w-full flex items-center justify-center px-4 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl shadow-lg shadow-indigo-500/30 transition-all duration-200 transform hover:scale-105 mb-3 group">
+                <i data-lucide="play" class="w-5 h-5 mr-2 group-hover:animate-pulse"></i>
+                <span class="hidden lg:inline font-semibold">Start Trip</span>
+            </button>
+            <button id="end-trip-btn" onclick="handleEndTrip()"
+                class="hidden w-full flex items-center justify-center px-4 py-3 bg-red-600 hover:bg-red-700 text-white rounded-xl shadow-lg shadow-red-500/30 transition-all duration-200 transform hover:scale-105 mb-3 group">
+                <i data-lucide="square" class="w-5 h-5 mr-2 group-hover:animate-pulse"></i>
+                <span class="hidden lg:inline font-semibold">End Trip</span>
+            </button>
+        </div>
+
+        <nav class="flex-grow px-3 space-y-2 mt-2">
+            <button onclick="setPage('dashboard')"
+                class="nav-item w-full flex items-center p-3 rounded-xl transition-all duration-200 text-gray-400 hover:bg-gray-800 hover:text-white group">
+                <i data-lucide="layout-dashboard" class="w-5 h-5 flex-shrink-0 group-hover:text-indigo-400"></i>
+                <span class="hidden lg:inline ml-4 text-sm font-medium">Dashboard</span>
+            </button>
+            <button onclick="setPage('reports')"
+                class="nav-item w-full flex items-center p-3 rounded-xl transition-all duration-200 text-gray-400 hover:bg-gray-800 hover:text-white group">
+                <i data-lucide="bar-chart-2" class="w-5 h-5 flex-shrink-0 group-hover:text-indigo-400"></i>
+                <span class="hidden lg:inline ml-4 text-sm font-medium">Reports</span>
+            </button>
+            <button onclick="setPage('settings')"
+                class="nav-item w-full flex items-center p-3 rounded-xl transition-all duration-200 text-gray-400 hover:bg-gray-800 hover:text-white group">
+                <i data-lucide="settings" class="w-5 h-5 flex-shrink-0 group-hover:text-indigo-400"></i>
+                <span class="hidden lg:inline ml-4 text-sm font-medium">Settings</span>
+            </button>
+        </nav>
+
+        <div id="user-profile" class="p-4 border-t border-gray-800 mt-auto">
+        </div>
+    </div>
+
+    <main id="main-content" class="main-content flex-1 overflow-y-auto p-4 md:p-8 lg:ml-64 transition-all duration-300">
+
+    </main>
+
+    <div id="auth-overlay" class="fixed inset-0 bg-gray-900 bg-opacity-90 flex items-center justify-center z-50">
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

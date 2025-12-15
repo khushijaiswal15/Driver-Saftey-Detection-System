@@ -1,0 +1,22 @@
+{
+  "name": "driver_safety",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@sendgrid/mail": "^8.1.6",
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "json2csv": "^6.0.0-alpha.2",
+    "mysql2": "^3.15.2",
+    "nodemailer": "^7.0.9",
+    "pdfkit": "^0.17.2"
+  }
+}

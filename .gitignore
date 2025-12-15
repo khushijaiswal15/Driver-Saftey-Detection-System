@@ -1,0 +1,20 @@
+# Virtual environments
+venv/
+.venv/
+.venv_mp/
+
+# Python
+__pycache__/
+*.pyc
+
+# Environment variables
+.env
+
+# ML / large files
+*.zip
+*.pt
+*.onnx
+*.h5
+
+# OS
+.DS_Store
